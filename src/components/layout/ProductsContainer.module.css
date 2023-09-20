@@ -1,0 +1,23 @@
+.productsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 400px;
+    border: solid black 1px;
+    align-self: center;
+    margin-bottom: 30px;
+}
+
+.productsContainer h1 {
+    color: blue;
+}
+
+.productsContainer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.productsContainer li {
+    list-style-type: none;
+}

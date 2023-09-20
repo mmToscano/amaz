@@ -1,0 +1,28 @@
+.navbar{
+    background-color: #62cb38;
+    padding: 1em;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.item {
+    margin-right: 1em;
+}
+
+.item a{
+    color: #FFF;
+    text-decoration: none;
+}
+
+.item a:hover{
+    color: #FFBB33;
+}
+
+.img {
+    width: 64px;
+    height: 64px;
+}
