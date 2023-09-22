@@ -9,10 +9,12 @@
 }
 
 .home_container h1 {
-    
+    color: #319421;
     
 }
 
 .home_container p {
+    margin-top: 10px;
+    color: #319421;
     margin-bottom: 30px;
 }

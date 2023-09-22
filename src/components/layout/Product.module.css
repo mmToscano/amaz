@@ -4,7 +4,12 @@
     width: 160px;
     height: 330px;
     margin: 10px 10px 0 10px;
-    border: solid black 1px;
+    border: solid #6bc85d 1px;
+}
+
+.product:hover {
+    background-color: #c6c6c6;
+    cursor: pointer;
 }
 
 .product img {

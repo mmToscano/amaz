@@ -8,6 +8,7 @@ function Home(){
             <h1>Bem vindo à loja Amazônia</h1>
             <p>Pegue já a sua planta favorita!</p>
             <ProductsContainer descricao='Mais vistos'></ProductsContainer>
+            <ProductsContainer descricao='O que os outros clientes estão vendo'></ProductsContainer>
         </section>
     )
 }
