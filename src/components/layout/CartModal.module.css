@@ -1,0 +1,80 @@
+.cartModal {
+    position: fixed;
+    z-index: 1;
+    display: none;
+    width: 600px;
+    height: 350px;
+    border: solid black 4px;
+    z-index: 1;
+    top: 20%;
+    left: 20%;
+    background-color: #fefefe;
+}
+
+.cartModal img {
+    width: 200px;
+    height: 200px;
+    margin: auto 0 auto 30px;
+}
+
+.cartModal .information {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartModal .information h1 {
+    font-size: 18px;
+    color: #666c55;
+
+    margin-top: 71px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.cartModal .information h2 {
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+.cartModal .information input {
+    width: 150px;
+    height: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: gray;
+}
+
+.cartModal .information input::placeholder {
+    text-align: left;
+}
+
+.cartModal .information input:focus::placeholder {
+    color: transparent; /* Hide the placeholder when input is focused */
+}
+
+.cartModal .information button {
+    width: 150px;
+    height: 50px;
+    margin-left: 20px;
+    font-size: 22px;
+    background-color: #319421;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.cartModal .information button:hover {
+    background-color: #66a45d;
+}
+
+.cartModal .information .close {
+    position: relative;
+    left: 30px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+    

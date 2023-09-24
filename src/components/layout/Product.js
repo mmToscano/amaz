@@ -3,7 +3,7 @@ import defaultImage from '../../img/plants_imgs/carolina_reaper.jpg'
 
 import {useState} from 'react';
 
-function Product () {
+function Product ({toggleCartModal}) {
 
     const [isHovering, setIsHovering] = useState(false);
 
@@ -15,12 +15,20 @@ function Product () {
         setIsHovering(false);
     }
 
+    const handleClick = () => {
+        toggleCartModal();
+    }
+
 
     return(
-        <div className={styles.product} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+        <div className={styles.product}
+            onMouseOver={handleMouseOver} 
+            onMouseOut={handleMouseOut}
+            onClick={handleClick}>
+
             {isHovering && (
-                <div>
-                    <h2>Only visible when hovering</h2>
+                <div className={styles.temporaryCart}>
+                    <h3 className={styles.comprarBtn}>Comprar</h3>
                 </div>
             )}
             <img src={defaultImage}></img>

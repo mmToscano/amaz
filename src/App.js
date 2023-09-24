@@ -1,5 +1,7 @@
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 
+import React, {useState} from 'react';
+
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import ProductsPage from './components/pages/ProductsPage';
