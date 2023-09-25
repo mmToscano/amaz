@@ -2,6 +2,8 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 
 import React, {useState} from 'react';
 
+
+
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import ProductsPage from './components/pages/ProductsPage';
@@ -10,6 +12,7 @@ import Cart from './components/pages/Cart';
 import Container from './components/layout/Container';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import { CartProvider } from './components/contexts/CartContext';
 
 function App() {
 
@@ -18,12 +21,14 @@ function App() {
     <Router>
       <Navbar/>
       <Container customClass='min-height'>
+        <CartProvider>
         <Routes>
           <Route exact path='/' element={<Home/>}></Route>
           <Route exact path='/products' element={<ProductsPage/>}></Route>
           <Route exact path='/cart' element={<Cart/>}></Route>
           <Route exact path='/contact' element={<Contact/>}></Route>
         </Routes>
+        </CartProvider>
       </Container>
       <Footer/>
     </Router>
@@ -35,39 +40,3 @@ function App() {
 }
 
 export default App;
-
-/*
-<Router>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/empresa">Empresa</Link></li>
-        <li><Link to="/contato">Contato</Link></li>
-      </ul>
-      <Routes>
-        <Route exact path="/" element={<Home/>}/>
-        <Route path="/empresa" element={<Empresa/>}/>
-        <Route path="/contato" element={<Contato/>}/>
-      </Routes>
-      <Footer/>
-    </Router>
-*/
-
-
-/*
-
- //usa-se isso quando é preciso usar o mesmo state em mais de um componente.
- const [nome, setNome] = useState();
- const meusItens = ['React', 'Vue', 'Angular', ]
-
-
-<div className="App">
-      <h1>State lift</h1>
-      <SeuNome setNome={setNome}/>
-      <Saudacao nome={nome}/>
-      {nome}
-
-
-    </div>
-
-
-*/

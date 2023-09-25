@@ -1,0 +1,79 @@
+.cartProduct_container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 170px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fefefe;
+    margin-top: 15px;
+}
+
+.cartProduct_container img {
+    width: 120px;
+    height: 120px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.cartProduct_container .information_container {
+    margin-top: 20px;
+}
+
+.cartProduct_container h1 {
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.cartProduct_container .areaDePreco {
+    display: flex;
+    margin-top: 15px;
+}
+
+.cartProduct_container .promo {
+    color: #319421;
+}
+
+.cartProduct_container h2 {
+    font-size: 14px;
+}
+
+.cartProduct_container .buy_container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+
+.cartProduct_container .buy_container input {
+    width: 150px;
+    height: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: gray;
+}
+
+.cartProduct_container input::placeholder {
+    text-align: left;
+}
+
+.cartProduct_container input:focus::placeholder {
+    color: transparent; /* Hide the placeholder when input is focused */
+}
+
+.cartProduct_container button {
+    width: 150px;
+    height: 50px;
+    font-size: 22px;
+    background-color: #319421;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cartProduct_container button:hover {
+    background-color: #66a45d;
+}

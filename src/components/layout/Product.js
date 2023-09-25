@@ -1,9 +1,9 @@
 import styles from './Product.module.css'
-import defaultImage from '../../img/plants_imgs/carolina_reaper.jpg'
 
 import {useState} from 'react';
 
-function Product ({toggleCartModal}) {
+function Product ({toggleCartModal, plantData}) {
+
 
     const [isHovering, setIsHovering] = useState(false);
 
@@ -16,8 +16,9 @@ function Product ({toggleCartModal}) {
     }
 
     const handleClick = () => {
-        toggleCartModal();
+        toggleCartModal(plantData);
     }
+
 
 
     return(
@@ -31,12 +32,12 @@ function Product ({toggleCartModal}) {
                     <h3 className={styles.comprarBtn}>Comprar</h3>
                 </div>
             )}
-            <img src={defaultImage}></img>
-            <h1>Carolina Reaper: 5 sementes</h1>
-            <h2>(Pimenta mais forte do mundo)</h2>
+            <img src={plantData.src}></img>
+            <h1>{plantData.nome}</h1>
+            <h2>{plantData.subtitulo}</h2>
             <div className={styles.areaDePreco}>
-                <h2><s>R$ 33,98</s></h2>
-                <h2 className={styles.promo}>R$ 28,99</h2>
+                <h2><s>R$ {plantData.preco}</s></h2>
+                <h2 className={styles.promo}>R$ {plantData.promo}</h2>
             </div>
         </div>
     )

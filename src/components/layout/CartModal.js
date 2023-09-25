@@ -1,26 +1,41 @@
-import styles from './CartModal.module.css'
+import styles from './CartModal.module.css';
+import { CartContext } from '../contexts/CartContext';
+import { useContext } from 'react';
 
-import defaultImage from '../../img/plants_imgs/carolina_reaper.jpg'
-
-function CartModal({isVisible}){
-
+function CartModal({ isVisible, onClose, productData }) {
+    const {addToCart} = useContext(CartContext);
+    
+    const handleAddToCart = () => {
+        if (productData) {
+          addToCart(productData);
+          onClose();
+        }
+      };
 
     const modalStyle = {
         display: isVisible ? 'flex' : 'none'
-    }
+    };
 
-    return(
+    // Check if productData is defined before accessing its properties
+    const productImage = productData ? (
+        <img src={process.env.PUBLIC_URL + productData.src} alt='nada' />
+    ) : null;
+
+    const productName = productData ? productData.nome : '';
+    const productPrice = productData ? `${productData.preco} por ${productData.promo}` : '';
+
+    return (
         <div className={styles.cartModal} style={modalStyle}>
-            <img src={defaultImage}/>
+            {productImage}
             <div className={styles.information}>
-                <span class="close">&times;</span>
-                <h1>Carolina Reaper 5 sementes balskdjlrenlaçksdfjlkaanwelrjnlkaçjerl</h1>
-                <h2>25 reais por 18</h2>
-                <input type='number' placeholder='Qtde'/>
-                <button>Comprar</button>
+                <span className={styles.close} onClick={onClose}>&times;</span>
+                <h1>{productName}</h1>
+                <h2>{productPrice}</h2>
+                <input type='number' placeholder='Qtde' />
+                <button onClick={handleAddToCart}>Comprar</button>
             </div>
         </div>
-    )
+    );
 }
 
 export default CartModal;

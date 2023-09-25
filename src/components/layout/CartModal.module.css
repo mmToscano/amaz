@@ -26,7 +26,7 @@
     font-size: 18px;
     color: #666c55;
 
-    margin-top: 71px;
+    margin-top: 41px;
     margin-left: 20px;
     margin-bottom: 15px;
 }
@@ -62,6 +62,7 @@
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .cartModal .information button:hover {
@@ -70,10 +71,13 @@
 
 .cartModal .information .close {
     position: relative;
-    left: 30px;
+    width: 32px;
+    left: 330px;
     color: #aaa;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 0;
 }
 
 
