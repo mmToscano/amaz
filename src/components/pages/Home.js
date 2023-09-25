@@ -5,7 +5,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import ProductsContainer from '../layout/ProductsContainer';
 import CartModal from '../layout/CartModal';
 
-import plantsData from '../../database/plantsData';
+import maisVistos from '../../database/MaisVistos';
+import lancamentos from '../../database/Lancamentos'
 
 
 function Home(){
@@ -24,8 +25,8 @@ function Home(){
             <CartModal isVisible={isCartModalVisible} onClose={toggleCartModal} productData={productData}></CartModal>
             <h1>Bem vindo à loja Amazônia</h1>
             <p>Pegue já a sua planta favorita!</p>
-            <ProductsContainer plantsData={plantsData} descricao='Mais vistos' toggleCartModal={toggleCartModal}></ProductsContainer>
-            <ProductsContainer plantsData={plantsData} descricao='O que os outros clientes estão vendo' toggleCartModal={toggleCartModal}></ProductsContainer>
+            <ProductsContainer plantsData={maisVistos} descricao='Mais vistos' toggleCartModal={toggleCartModal}></ProductsContainer>
+            <ProductsContainer plantsData={lancamentos} descricao='O que os outros clientes estão vendo' toggleCartModal={toggleCartModal}></ProductsContainer>
         </section>
     )
 }

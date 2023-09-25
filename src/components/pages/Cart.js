@@ -5,6 +5,10 @@ import { CartContext } from '../contexts/CartContext';
 
 function Cart() {
 
+    function printJson(){
+        console.log(cart);
+    }
+
     const { cart } = useContext(CartContext);
 
     return (
@@ -12,6 +16,7 @@ function Cart() {
             {cart.map((productData, index) => (
                 <CartProduct key={index} productData={productData} />
             ))}
+            <button className={styles.btn} onClick={printJson}>Comprar Tudo</button>
         </section>
     )
 }

@@ -34,7 +34,13 @@
 .cartModal .information h2 {
     margin-bottom: 15px;
     margin-left: 20px;
+    color: #319421;
 }
+
+.cartModal .information s {
+    color: #666c55;
+}
+
 
 .cartModal .information input {
     width: 150px;

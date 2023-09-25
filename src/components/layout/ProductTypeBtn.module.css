@@ -1,0 +1,19 @@
+.btn {
+    font-size: 26px;
+    width: 250px;
+    height: 50px;
+    border: solid black 1px;
+    text-align: center;
+    padding-top: 7px;
+    background-color: #d2ebca;
+    color: rgb(53, 62, 71);
+    border: none;
+    margin-top: 15px;
+    margin-right: 3px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    border: solid 3px rgb(144, 218, 156);
+}

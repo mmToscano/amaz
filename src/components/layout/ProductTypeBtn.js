@@ -1,8 +1,8 @@
-import styles from './ProductTypeBtn';
+import styles from './ProductTypeBtn.module.css';
 
 function ProductTypeBtn({descricao}) {
     return (
-        <div>{descricao}</div>
+        <div className={styles.btn}>{descricao}</div>
     )
 }
 

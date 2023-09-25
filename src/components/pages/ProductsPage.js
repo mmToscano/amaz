@@ -4,8 +4,13 @@ import styles from './ProductsPage.module.css'
 function ProductsPage() {
     return(
         <div className={styles.productsPage}>
-            <ProductTypeBtn descricao='semente de pimenta'></ProductTypeBtn>
-            <ProductTypeBtn descricao='semente árvore'></ProductTypeBtn>
+            <div className={styles.btns}>
+                <ProductTypeBtn descricao='semente de pimenta'></ProductTypeBtn>
+                <ProductTypeBtn descricao='semente de árvore'></ProductTypeBtn>
+                <ProductTypeBtn descricao='semente de flores'></ProductTypeBtn>
+                <ProductTypeBtn descricao='semente de tomates'></ProductTypeBtn> 
+            </div>
+               
         </div>
     )
 }

@@ -1,3 +1,11 @@
 .productsPage {
-    
+    border: solid black 1px;
+}
+
+.productsPage .btns {
+    display: flex;
+    border: solid black 1px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
 }
