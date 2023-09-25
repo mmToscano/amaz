@@ -1,8 +1,8 @@
 import styles from './ProductTypeBtn.module.css';
 
-function ProductTypeBtn({descricao}) {
+function ProductTypeBtn({descricao, onClick}) {
     return (
-        <div className={styles.btn}>{descricao}</div>
+        <div className={styles.btn} onClick={onClick}>{descricao}</div>
     )
 }
 
