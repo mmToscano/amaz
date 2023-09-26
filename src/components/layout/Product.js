@@ -2,7 +2,7 @@ import styles from './Product.module.css'
 
 import {useState} from 'react';
 
-function Product ({toggleCartModal, plantData}) {
+function Product ({toggleCartModal, plantData, index}) {
 
 
     const [isHovering, setIsHovering] = useState(false);

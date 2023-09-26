@@ -14,10 +14,11 @@ import CartModal from '../layout/CartModal';
 function ProductsPage() {
 
     const [isCartModalVisible, setIsCartModalVisible] = useState(false);
+    const [selectedProductIndex, setSelectedProductIndex] = useState(null);
 
-    const toggleCartModal = () => {
+    const toggleCartModal = (productData, productIndex) => {
         setIsCartModalVisible(!isCartModalVisible);
-        console.log(selectedProductType)
+        setSelectedProductIndex(productIndex);
     };
 
     const productDataMapping = {
@@ -50,9 +51,12 @@ function ProductsPage() {
                 <ProductsContainer descricao={selectedProductType.descricao} 
                 plantsData={selectedProductType} toggleCartModal={toggleCartModal} />
             )}
-            {isCartModalVisible && (
-                <CartModal isVisible={isCartModalVisible} onClose={toggleCartModal} productData={selectedProductType}/>
-                //O problema tá aqui
+            {isCartModalVisible && selectedProductIndex !== null && (
+                <CartModal 
+                    isVisible={isCartModalVisible} 
+                    onClose={toggleCartModal} 
+                    productData={selectedProductType[selectedProductIndex]}
+                />
             )}
                
         </div>
