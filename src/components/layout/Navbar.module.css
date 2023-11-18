@@ -1,6 +1,10 @@
 .navbar{
     background-color: #62cb38;
-    padding: 1em;
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 60px;
 }
 
 .list {
@@ -19,10 +23,11 @@
 }
 
 .item a:hover{
-    color: #FFBB33;
+    color:rgb(250, 250, 145);
 }
 
 .img {
-    width: 64px;
-    height: 64px;
+    width: 52px;
+    height: 52px;
+    margin-left: 15px;
 }

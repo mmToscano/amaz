@@ -15,6 +15,7 @@ function ProductsPage() {
 
     const [isCartModalVisible, setIsCartModalVisible] = useState(false);
     const [selectedProductIndex, setSelectedProductIndex] = useState(null);
+    const [selectedProductType, setSelectedProductType] = useState(null);
 
     const toggleCartModal = (productData, productIndex) => {
         setIsCartModalVisible(!isCartModalVisible);
@@ -28,7 +29,7 @@ function ProductsPage() {
         'sementes de tomate': SementesDeTomate
     }
 
-    const [selectedProductType, setSelectedProductType] = useState(null);
+    
 
     const handleProductTypeSelect = (descricao) => {
         const selectedProductData = productDataMapping[descricao];
@@ -41,11 +42,11 @@ function ProductsPage() {
                 <ProductTypeBtn descricao='sementes de pimenta' 
                 onClick={() => handleProductTypeSelect('sementes de pimenta')} />
                 <ProductTypeBtn descricao='sementes de arvore'
-                onClick={() => handleProductTypeSelect('sementes de arvore')} ></ProductTypeBtn>
+                onClick={() => handleProductTypeSelect('sementes de arvore')} />
                 <ProductTypeBtn descricao='sementes de flores'
-                onClick={() => handleProductTypeSelect('sementes de flores')} ></ProductTypeBtn>
+                onClick={() => handleProductTypeSelect('sementes de flores')} />
                 <ProductTypeBtn descricao='sementes de tomate'
-                onClick={() => handleProductTypeSelect('sementes de tomate')} ></ProductTypeBtn> 
+                onClick={() => handleProductTypeSelect('sementes de tomate')} /> 
             </div>
             {selectedProductType && (
                 <ProductsContainer descricao={selectedProductType.descricao} 

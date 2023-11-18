@@ -2,7 +2,7 @@ import styles from './Product.module.css'
 
 import {useState} from 'react';
 
-function Product ({toggleCartModal, plantData, index}) {
+function Product ({toggleCartModal, plantData}) {
 
 
     const [isHovering, setIsHovering] = useState(false);
@@ -32,7 +32,7 @@ function Product ({toggleCartModal, plantData, index}) {
                     <h3 className={styles.comprarBtn}>Comprar</h3>
                 </div>
             )}
-            <img src={plantData.src}></img>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd_mkoyVlPMb2qEoOlaJVka4zAOWgtaCdUCg&usqp=CAU"></img>
             <h1>{plantData.nome}</h1>
             <h2>{plantData.subtitulo}</h2>
             <div className={styles.areaDePreco}>

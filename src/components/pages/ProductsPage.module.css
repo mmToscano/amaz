@@ -1,11 +1,14 @@
 .productsPage {
-    border: solid black 1px;
+    margin: 0 auto;
+    background-color: white;
 }
 
 .productsPage .btns {
     display: flex;
-    border: solid black 1px;
+    /*border: solid orange 1px;*/
     width: 100%;
+    max-width: 1010px;
     flex-wrap: wrap;
     justify-content: center;
+    /*border: solid black 1px;*/
 }

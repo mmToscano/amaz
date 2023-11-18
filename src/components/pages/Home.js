@@ -1,6 +1,6 @@
 import styles from './Home.module.css';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import ProductsContainer from '../layout/ProductsContainer';
 import CartModal from '../layout/CartModal';
@@ -10,6 +10,7 @@ import lancamentos from '../../database/Lancamentos'
 
 
 function Home(){
+
 
     const [isCartModalVisible, setIsCartModalVisible] = useState(false);
     const [productData, setProductData] = useState("");
@@ -21,13 +22,19 @@ function Home(){
 
 
     return(
-        <section className={styles.home_container}>
-            <CartModal isVisible={isCartModalVisible} onClose={toggleCartModal} productData={productData}></CartModal>
+    <section className={styles.home_container}>
+        <CartModal isVisible={isCartModalVisible} onClose={toggleCartModal} productData={productData}></CartModal>
+        <div className={styles.titles_container}>
             <h1>Bem vindo à loja Amazônia</h1>
             <p>Pegue já a sua planta favorita!</p>
+        </div>
+        <div>
             <ProductsContainer plantsData={maisVistos} descricao='Mais vistos' toggleCartModal={toggleCartModal}></ProductsContainer>
             <ProductsContainer plantsData={lancamentos} descricao='O que os outros clientes estão vendo' toggleCartModal={toggleCartModal}></ProductsContainer>
-        </section>
+        </div>
+    </section>
+        
+        
     )
 }
 

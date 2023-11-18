@@ -4,11 +4,10 @@
     display: none;
     width: 600px;
     height: 350px;
-    border: solid black 4px;
     z-index: 1;
-    top: 20%;
-    left: 20%;
     background-color: #fefefe;
+    border: solid 1px #568203;
+    border-radius: 10px;
 }
 
 .cartModal img {

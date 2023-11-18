@@ -22,12 +22,12 @@ function App() {
       <Navbar/>
       <Container customClass='min-height'>
         <CartProvider>
-        <Routes>
-          <Route exact path='/' element={<Home/>}></Route>
-          <Route exact path='/products' element={<ProductsPage/>}></Route>
-          <Route exact path='/cart' element={<Cart/>}></Route>
-          <Route exact path='/contact' element={<Contact/>}></Route>
-        </Routes>
+          <Routes>
+            <Route exact path='/' element={<Home/>}></Route>
+            <Route exact path='/products' element={<ProductsPage/>}></Route>
+            <Route exact path='/cart' element={<Cart/>}></Route>
+            <Route exact path='/contact' element={<Contact/>}></Route>
+          </Routes>
         </CartProvider>
       </Container>
       <Footer/>

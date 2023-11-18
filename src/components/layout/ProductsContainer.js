@@ -12,7 +12,7 @@ function ProductsContainer ({descricao, toggleCartModal, plantsData}) {
                   <Product plantData={plant} toggleCartModal={() => toggleCartModal(plant, index)} />
                 </li>
               ))}
-      </ul>
+            </ul>
         </div>
     ) 
 }

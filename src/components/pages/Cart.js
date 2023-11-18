@@ -6,7 +6,7 @@ import { CartContext } from '../contexts/CartContext';
 function Cart() {
 
     function printJson(){
-        console.log(cart);
+        console.log(JSON.stringify(cart));
     }
 
     const { cart } = useContext(CartContext);
@@ -16,7 +16,9 @@ function Cart() {
             {cart.map((productData, index) => (
                 <CartProduct key={index} productData={productData} />
             ))}
-            <button className={styles.btn} onClick={printJson}>Comprar Tudo</button>
+            {cart.length != 0 ?  (
+                <button className={styles.btn} onClick={printJson}>Comprar Tudo</button>
+            ) : <div className={styles.btn}>Não há nada no carrinho</div>}
         </section>
     )
 }

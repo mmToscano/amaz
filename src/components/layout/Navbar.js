@@ -8,7 +8,7 @@ import logo from '../../img/leaf.png'
 function Navbar() {
     return(
         <nav className={styles.navbar}>
-            <Container>
+            
                 <Link to='/'><img className={styles.img} src={logo}/></Link>
                 <ul className={styles.list}>
                     <li className={styles.item}><Link to="/">Home</Link></li>
@@ -16,7 +16,7 @@ function Navbar() {
                     <li className={styles.item}><Link to="/cart">Carrrinho</Link></li>
                     <li className={styles.item}><Link to="/contact">Contato</Link></li>
                 </ul>
-            </Container>
+           
         </nav>
         
     );

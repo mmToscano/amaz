@@ -23,7 +23,6 @@ function CartModal({ isVisible, onClose, productData }) {
         display: isVisible ? 'flex' : 'none'
     };
 
-    // Check if productData is defined before accessing its properties
     const productImage = productData ? (
         <img src={process.env.PUBLIC_URL + productData.src} alt='nada' />
     ) : null;
