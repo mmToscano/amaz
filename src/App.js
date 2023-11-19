@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 
 
 import Home from './components/pages/Home';
-import Contact from './components/pages/Contact';
+import Orders from './components/pages/Orders';
 import ProductsPage from './components/pages/ProductsPage';
 import Cart from './components/pages/Cart';
 
@@ -26,7 +26,7 @@ function App() {
             <Route exact path='/' element={<Home/>}></Route>
             <Route exact path='/products' element={<ProductsPage/>}></Route>
             <Route exact path='/cart' element={<Cart/>}></Route>
-            <Route exact path='/contact' element={<Contact/>}></Route>
+            <Route exact path='/orders' element={<Orders/>}></Route>
           </Routes>
         </CartProvider>
       </Container>
