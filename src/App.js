@@ -17,6 +17,14 @@ import { CartProvider } from './components/contexts/CartContext';
 function App() {
 
 
+  const [orderData, setOrderData] = useState();
+
+  const pegarOrderData = (cartData) => {
+    setOrderData(cartData);
+  }
+
+
+
   return (
     <Router>
       <Navbar/>
@@ -25,8 +33,8 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Home/>}></Route>
             <Route exact path='/products' element={<ProductsPage/>}></Route>
-            <Route exact path='/cart' element={<Cart/>}></Route>
-            <Route exact path='/orders' element={<Orders/>}></Route>
+            <Route exact path='/cart' element={<Cart pegarOrderData={pegarOrderData}/>}></Route>
+            <Route exact path='/orders' element={<Orders orders={orderData}/>}></Route>
           </Routes>
         </CartProvider>
       </Container>

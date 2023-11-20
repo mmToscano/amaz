@@ -8,6 +8,9 @@
     background-color: #fefefe;
     border: solid 1px #568203;
     border-radius: 10px;
+    margin: auto 0;
+    bottom: 70px;
+    right: 350px;
 }
 
 .cartModal img {
