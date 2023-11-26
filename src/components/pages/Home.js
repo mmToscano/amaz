@@ -1,6 +1,6 @@
 import styles from './Home.module.css';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import ProductsContainer from '../layout/ProductsContainer';
 import CartModal from '../layout/CartModal';
@@ -11,9 +11,29 @@ import lancamentos from '../../database/Lancamentos'
 
 function Home(){
 
-
+    const [frutas, setFrutas] = useState([]);
+    const [arvores, setArvores] = useState([]);
     const [isCartModalVisible, setIsCartModalVisible] = useState(false);
     const [productData, setProductData] = useState("");
+
+    //Pega as informações das plantas quando a página é aberta
+    useEffect(() => {
+        fetch("http://localhost:9000/gruposESementes", {
+            method: "GET",
+            mode: 'cors'
+        }).then((response) => response.json())
+        .then((data) => organizarSementes(data))
+
+        
+    }, [])
+
+    const organizarSementes = (data) => {
+        let newArvores = data.filter((x) => x.idgrupo == 2);
+        let newFrutas = data.filter((x) => x.idgrupo == 5);
+        setArvores(newArvores);
+        setFrutas(newFrutas);
+    }
+
 
     const toggleCartModal = (productData) => {
         setProductData(productData);
@@ -29,8 +49,8 @@ function Home(){
             <p>Pegue já a sua planta favorita!</p>
         </div>
         <div>
-            <ProductsContainer plantsData={maisVistos} descricao='Mais vistos' toggleCartModal={toggleCartModal}></ProductsContainer>
-            <ProductsContainer plantsData={lancamentos} descricao='O que os outros clientes estão vendo' toggleCartModal={toggleCartModal}></ProductsContainer>
+            <ProductsContainer plantsData={arvores} descricao='Arvores' toggleCartModal={toggleCartModal}></ProductsContainer>
+            <ProductsContainer plantsData={frutas} descricao='Frutas' toggleCartModal={toggleCartModal}></ProductsContainer>
         </div>
     </section>
         
