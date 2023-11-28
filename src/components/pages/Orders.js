@@ -4,11 +4,11 @@ import styles from './Orders.module.css'
 import {useState, useEffect} from 'react';
 
 
-function Orders({ordersData}){
+function Orders(){
 
     const [orders, setOrders] = useState([]);
 
-    //quando abrir a página Orders, é feito um fetch na api para pegar todos os pedidos
+    //quando abrir a página, é feito um fetch na api para pegar os pedidos
     useEffect(() => {
         const response = fetch("http://localhost:9000/pedidos", {
         method: "GET",
@@ -21,7 +21,7 @@ function Orders({ordersData}){
 
     return (
         <>
-            {orders ? (
+            {orders.length != 0 ? (
                 <div className={styles.orders_container}>
                     {orders.map((orderData, index) => (
                 <Order productData={orderData}></Order>

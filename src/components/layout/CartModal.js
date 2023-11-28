@@ -5,18 +5,9 @@ import { useContext, useState } from 'react';
 function CartModal({ isVisible, onClose, productData }) {
 
     const [quantity, setQuantity] = useState(); 
-
-    const {addToCart} = useContext(CartContext);
     
     const handleAddToCart = () => {
         if (productData) {
-            /*
-          const productWithQuantity = {
-            ...productData,
-            quantity: quantity
-          };
-          addToCart(productWithQuantity);
-          */
 
           const productWithQuantity = {
             ...productData,
@@ -61,7 +52,7 @@ function CartModal({ isVisible, onClose, productData }) {
             <div className={styles.information}>
                 <span className={styles.close} onClick={onClose}>&times;</span>
                 <h1>{productName}</h1>
-                <h2><s>R$ {productPrice}</s> R$ {productPromo}</h2>
+                <h2>R$ {productPrice}</h2>
                 <input type='number' placeholder='Qtde' onChange={(e) => setQuantity(e.target.value)}/>
                 <button onClick={handleAddToCart}>Comprar</button>
             </div>

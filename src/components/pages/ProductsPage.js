@@ -4,13 +4,6 @@ import styles from './ProductsPage.module.css'
 
 import { useState, useEffect } from 'react';
 
-/*
-import SementesDeArvore from '../../database/SementesDeArvore'
-import SementesDeFlores from '../../database/SementesDeFlores'
-import SementesDePimenta from '../../database/SementesDePimenta'
-import SementesDeTomate from '../../database/SementesDeTomate'
-*/
-
 import CartModal from '../layout/CartModal';
 
 function ProductsPage() {

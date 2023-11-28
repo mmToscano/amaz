@@ -67,7 +67,7 @@
     width: 150px;
     height: 50px;
     font-size: 22px;
-    background-color: #319421;
+    background-color: rgb(219, 46, 16);
     color: white;
     border: none;
     border-radius: 5px;
@@ -75,5 +75,5 @@
 }
 
 .cartProduct_container button:hover {
-    background-color: #66a45d;
+    background-color: rgb(164, 110, 93);
 }

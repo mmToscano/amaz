@@ -3,12 +3,10 @@ import CartProduct from '../layout/CartProduct';
 import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../contexts/CartContext';
 
-function Cart({pegarOrderData}) {
+function Cart() {
 
     const [cart, setCart] = useState([])
-    //const { cart, removeAllFromCart } = useContext(CartContext);
 
-    //Pega o carrinho do banco quando abre a página
     useEffect(() => {
         fetch("http://localhost:9000/carrinhos", {
             method: "GET",
@@ -47,10 +45,15 @@ function Cart({pegarOrderData}) {
         
     }
 
+    function retirarItem(id) {
+        let newCart = cart.filter((item) => item.idcarrinho != id);
+        setCart(newCart);
+    }
+
     return (
         <section className={styles.cart_container}>
             {cart.map((productData, index) => (
-                <CartProduct key={index} productData={productData} />
+                <CartProduct key={index} productData={productData} retirarItem={retirarItem}/>
             ))}
             {cart.length != 0 ?  (
                 <button className={styles.btn} onClick={() => comprarTudo()}>Comprar Tudo</button>
@@ -60,8 +63,3 @@ function Cart({pegarOrderData}) {
 }
 
 export default Cart;
-
-//pega a informação do cart ao clicar no botão e envia essa informação ao banco de dados (coloca na tabela carrinho do banco)
-    //esse fetch aqui acessará o endpoint da API. Nâo é aqui que ocorrerá a conexão com o banco de dados
-    //(o front-end não tem acesso direto com o banco, lembra?). O que ocorrerá aqui é que terá uma conexão com a
-    //API, e então a API terá a conexão com o banco, bocó de asa
