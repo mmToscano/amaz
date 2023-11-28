@@ -5,9 +5,6 @@ import React, { useState, useEffect } from 'react';
 import ProductsContainer from '../layout/ProductsContainer';
 import CartModal from '../layout/CartModal';
 
-import maisVistos from '../../database/MaisVistos';
-import lancamentos from '../../database/Lancamentos'
-
 
 function Home(){
 
@@ -28,8 +25,8 @@ function Home(){
     }, [])
 
     const organizarSementes = (data) => {
-        let newArvores = data.filter((x) => x.idgrupo == 2);
-        let newFrutas = data.filter((x) => x.idgrupo == 5);
+        let newArvores = data.filter((x) => x.idgrupo === 2);
+        let newFrutas = data.filter((x) => x.idgrupo === 5);
         setArvores(newArvores);
         setFrutas(newFrutas);
     }

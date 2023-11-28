@@ -10,10 +10,11 @@ function Orders({ordersData}){
 
     //quando abrir a página Orders, é feito um fetch na api para pegar todos os pedidos
     useEffect(() => {
-        fetch("http://localhost:3000/atendimentos", {
-            method: "GET",
-            headers: "Content-Type: application/json"
-        })
+        const response = fetch("http://localhost:9000/pedidos", {
+        method: "GET",
+        headers: {"Content-Type": "application/json"}
+        }).then((response) => response.json())
+        .then((data) => setOrders(data))
     }, [])
 
     

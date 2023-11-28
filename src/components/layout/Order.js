@@ -13,8 +13,8 @@ function Order({productData}) {
                 <img src=""/>
                 <div className={styles.titles}>
                     <h1>{productData.nome}</h1>
-                    <p><strong>{productData.quantity}</strong></p>
-                    <p className={styles.price}>Valor total: R${(productData.quantity * productData.preco).toFixed(2)}</p>
+                    <p><strong>{productData.quantidade}</strong></p>
+                    <p className={styles.price}>Valor total: R${(productData.quantidade * productData.preco).toFixed(2)}</p>
                 </div>
             </div>
         </div>

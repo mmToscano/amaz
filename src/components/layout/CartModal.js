@@ -10,12 +10,36 @@ function CartModal({ isVisible, onClose, productData }) {
     
     const handleAddToCart = () => {
         if (productData) {
+            /*
           const productWithQuantity = {
             ...productData,
             quantity: quantity
           };
           addToCart(productWithQuantity);
-          onClose();
+          */
+
+          const productWithQuantity = {
+            ...productData,
+            quantidade: Math.floor(quantity)
+          }
+
+          delete productWithQuantity.grupoNome;
+          delete productWithQuantity.idgrupo;
+          delete productWithQuantity.preco_na_promocao;
+          delete productWithQuantity.idsemente;
+
+          console.log(JSON.stringify(productWithQuantity));
+
+          fetch("http://localhost:9000/carrinhos", {
+            method: "POST",
+            mode: 'cors',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(productWithQuantity)
+        }).then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err))
+
+        onClose();
         }
       };
 
@@ -29,7 +53,7 @@ function CartModal({ isVisible, onClose, productData }) {
 
     const productName = productData ? productData.nome : '';
     const productPrice = productData ? productData.preco : '';
-    const productPromo = productData ? productData.promo : '';
+    const productPromo = productData ? productData.preco_na_promocao : '';
 
     return (
         <div className={styles.cartModal} style={modalStyle}>

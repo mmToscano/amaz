@@ -37,7 +37,7 @@ function Product ({toggleCartModal, plantData}) {
             <h2>{plantData.subtitulo}</h2>
             <div className={styles.areaDePreco}>
                 <h2><s>R$ {plantData.preco}</s></h2>
-                <h2 className={styles.promo}>R$ {plantData.promo}</h2>
+                <h2 className={styles.promo}>R$ {plantData.preco_na_promocao}</h2>
             </div>
         </div>
     )

@@ -16,7 +16,7 @@ function CartProduct({productData}) {
                 </div>
             </div>
                 <div className={styles.buy_container}>
-                    <input type='number' defaultValue={productData.quantity}/>
+                    <input type='number' defaultValue={productData.quantidade}/>
                     <button>Comprar</button>
                 </div>
                 
