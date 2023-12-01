@@ -8,7 +8,7 @@ function Cart() {
     const [cart, setCart] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:9000/carrinhos", {
+        fetch("http://3.19.232.197:9000/carrinhos", {
             method: "GET",
             headers: {"Content-Type": "application/json"}
         }).then((response) => response.json())

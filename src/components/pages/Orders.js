@@ -10,7 +10,7 @@ function Orders(){
 
     //quando abrir a página, é feito um fetch na api para pegar os pedidos
     useEffect(() => {
-        const response = fetch("http://localhost:9000/pedidos", {
+        const response = fetch("http://3.19.232.197:9000/pedidos", {
         method: "GET",
         headers: {"Content-Type": "application/json"}
         }).then((response) => response.json())
@@ -36,55 +36,3 @@ function Orders(){
 }
 
 export default Orders;
-
-
-/*
-
-primeira:
-
-function Orders({ordersData}){
-
-    const [orders, setOrders] = useState([]);
-
-    useEffect(() => {
-        setOrders(orders.concat(ordersData))
-        
-    }, [ordersData])
-
-    return (
-        <>
-            {orders ? (
-                <div className={styles.orders_container}>
-                    {orders.map((orderData, index) => (
-                <Order productData={orderData}></Order>
-            ))}
-                </div>
-            ): <div className={styles.orders_container}>
-                    <div className={styles.sem_pedidos}>Você não possui nenhum pedido feito ainda!</div>
-                </div>}
-        </>
-    )
-    
-}
-
-segunda:
-
-function Orders({orders}){
-
-    return (
-        <>
-            {orders ? (
-                <div className={styles.orders_container}>
-                    {orders.map((orderData, index) => (
-                <Order productData={orderData}></Order>
-            ))}
-                </div>
-            ): <div className={styles.orders_container}>
-                    <div className={styles.sem_pedidos}>Você não possui nenhum pedido feito ainda!</div>
-                </div>}
-        </>
-    )
-    
-}
-
-*/

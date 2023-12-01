@@ -5,7 +5,7 @@ import defaultImage from '../../img/carolina_reaper.jpg'
 function CartProduct({productData, retirarItem}) {
 
     function removerItemDoCarrinho() {
-        fetch("http://localhost:9000/carrinho/" + productData.idcarrinho, {
+        fetch("http://3.19.232.197:9000/carrinho/" + productData.idcarrinho, {
             method: "DELETE",
             mode: 'cors'
         })
