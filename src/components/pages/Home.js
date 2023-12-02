@@ -15,7 +15,7 @@ function Home(){
 
     //Pega as informações das plantas quando a página é aberta
     useEffect(() => {
-        fetch("http://3.19.232.197:9000/sementes", {
+        fetch("http://3.23.59.132:9000/sementes", {
             method: "GET",
             mode: 'cors'
         }).then((response) => response.json())

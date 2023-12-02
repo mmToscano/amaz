@@ -21,7 +21,7 @@ function ProductsPage() {
     
 
     useEffect(() => {
-        fetch("http://3.19.232.197:9000/gruposESementes", {
+        fetch("http://3.23.59.132:9000/gruposESementes", {
             method: "GET",
             mode: 'cors'
         }).then((response) => response.json())

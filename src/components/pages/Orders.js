@@ -10,7 +10,7 @@ function Orders(){
 
     //quando abrir a página, é feito um fetch na api para pegar os pedidos
     useEffect(() => {
-        const response = fetch("http://3.19.232.197:9000/pedidos", {
+        const response = fetch("http://3.23.59.132:9000/pedidos", {
         method: "GET",
         headers: {"Content-Type": "application/json"}
         }).then((response) => response.json())
