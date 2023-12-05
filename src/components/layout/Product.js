@@ -32,7 +32,7 @@ function Product ({toggleCartModal, plantData}) {
                     <h3 className={styles.comprarBtn}>Comprar</h3>
                 </div>
             )}
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd_mkoyVlPMb2qEoOlaJVka4zAOWgtaCdUCg&usqp=CAU"></img>
+            <img src={plantData.url}></img>
             <h1>{plantData.nome}</h1>
             <h2>{plantData.subtitulo}</h2>
             <div className={styles.areaDePreco}>

@@ -15,8 +15,9 @@ function Home(){
 
     //Pega as informações das plantas quando a página é aberta
     useEffect(() => {
-        fetch("http://3.23.59.132:9000/sementes", {
+        fetch("http://3.142.52.247:9000/gruposESementes", {
             method: "GET",
+            headers: {"Content-Type": "application/json"},
             mode: 'cors'
         }).then((response) => response.json())
         .then((data) => organizarSementes(data))

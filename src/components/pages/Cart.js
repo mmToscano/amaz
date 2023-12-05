@@ -1,14 +1,13 @@
 import styles from './Cart.module.css'
 import CartProduct from '../layout/CartProduct';
-import React, { useContext, useEffect, useState } from 'react';
-import { CartContext } from '../contexts/CartContext';
+import React, { useEffect, useState } from 'react';
 
 function Cart() {
 
     const [cart, setCart] = useState([])
 
     useEffect(() => {
-        fetch("http://3.23.59.132:9000/carrinhos", {
+        fetch("http://3.142.52.247:9000/carrinhos", {
             method: "GET",
             headers: {"Content-Type": "application/json"}
         }).then((response) => response.json())
@@ -29,14 +28,14 @@ function Cart() {
         tratarPedidos(cart);
         
         for (let index = 0; index < cart.length; index++) {
-            const response = await fetch("http://localhost:9000/pedidos", {
+            const response = await fetch("http://3.142.52.247:9000/pedidos", {
             method: "POST",
             body: JSON.stringify(cart[index]),
             headers: {"Content-Type": "application/json"}
             })
         }
         
-        const responseCart = await fetch("http://localhost:9000/carrinhoTudo", {
+        const responseCart = await fetch("http://3.142.52.247:9000/carrinhoTudo", {
         method: "DELETE",
         headers: {"Content-Type": "application/json"}
         })
@@ -53,7 +52,7 @@ function Cart() {
     return (
         <section className={styles.cart_container}>
             {cart.map((productData, index) => (
-                <CartProduct key={index} productData={productData} retirarItem={retirarItem}/>
+                <CartProduct key={index} productData={productData} url={productData.url} retirarItem={retirarItem}/>
             ))}
             {cart.length != 0 ?  (
                 <button className={styles.btn} onClick={() => comprarTudo()}>Comprar Tudo</button>

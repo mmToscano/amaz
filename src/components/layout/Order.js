@@ -10,10 +10,10 @@ function Order({productData}) {
                 <h1>Data de entrega: 19/12/2023</h1>
             </div>
             <div className={styles.product_info}>
-                <img src=""/>
+                <img src={productData.url}/>
                 <div className={styles.titles}>
                     <h1>{productData.nome}</h1>
-                    <p><strong>{productData.quantidade}</strong></p>
+                    <p><strong>Quantidade: {productData.quantidade}</strong></p>
                     <p className={styles.price}>Valor total: R${(productData.quantidade * productData.preco).toFixed(2)}</p>
                 </div>
             </div>

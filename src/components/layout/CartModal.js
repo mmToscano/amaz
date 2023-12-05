@@ -1,6 +1,5 @@
 import styles from './CartModal.module.css';
-import { CartContext } from '../contexts/CartContext';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 function CartModal({ isVisible, onClose, productData }) {
 
@@ -21,7 +20,7 @@ function CartModal({ isVisible, onClose, productData }) {
 
           console.log(JSON.stringify(productWithQuantity));
 
-          fetch("http://localhost:9000/carrinhos", {
+          fetch("http://3.142.52.247:9000/carrinhos", {
             method: "POST",
             mode: 'cors',
             headers: {"Content-Type": "application/json"},
@@ -39,12 +38,11 @@ function CartModal({ isVisible, onClose, productData }) {
     };
 
     const productImage = productData ? (
-        <img src={process.env.PUBLIC_URL + productData.src} alt='nada' />
+        <img src={productData.url} alt='nada' />
     ) : null;
 
     const productName = productData ? productData.nome : '';
     const productPrice = productData ? productData.preco : '';
-    const productPromo = productData ? productData.preco_na_promocao : '';
 
     return (
         <div className={styles.cartModal} style={modalStyle}>
